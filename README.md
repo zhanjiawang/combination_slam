@@ -66,6 +66,8 @@ sudo make install -j16
 ### 3. 编译
 
 ```bash
+git clone https://github.com/zhanjiawang/combination_slam.git
+cd combination_slam
 catkin_make / catkin_make install
 ```
 
