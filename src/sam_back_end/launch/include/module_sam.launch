@@ -1,0 +1,4 @@
+<launch>
+    <arg name="program_path" default="$(find sam_back_end)" />
+    <node pkg="sam_back_end" type="sam_back_end_lioSamBackEnd" name="sam_back_end_lioSamBackEnd" args="-program_path $(arg program_path)" output="screen" />
+</launch>

@@ -1,0 +1,23 @@
+context_localization:
+  #构建地图模式“construct”还是读取地图模式“read”
+  work_mode: "read"
+  #数据的位置，需要修改
+  relative_path: "jia_de_wei"
+  #定位的模式
+  localization_mode: "pose_point_cloud" #pure_point_cloud纯点云模式，pose_point_cloud位姿点云(里程计)模式
+  #缓存的大小
+  cache_size: 10
+  #定位的帧率
+  localization_fps: 10
+  #激光雷达的最远探测距离
+  lidar_max_range: 50.0 
+  #对初步变换矩阵排名靠前的多少个变化矩阵进行精细验证
+  verify_number: 10
+  # NDT的迭代最大次数
+  ndt_max_iteration: 10
+  # NDT优化残差异常值阈值
+  ndt_residual_outlier_threshold: 20.0
+  # NDT的约束数量阈值
+  ndt_constraint_number_threshold: 30
+  # NDT的优化收敛条件
+  ndt_convergence_condition_threshold: 0.01

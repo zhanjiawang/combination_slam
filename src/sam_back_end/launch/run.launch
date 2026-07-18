@@ -1,0 +1,14 @@
+<launch>
+
+    <arg name="project" default="sam_back_end"/>
+    
+    <!-- Parameters -->
+    <rosparam file="$(find sam_back_end)/config/params.yaml" command="load" />
+
+    <!--- LOAM -->
+    <include file="$(find sam_back_end)/launch/include/module_sam.launch" />
+
+    <!--- Run Rviz-->
+    <include file="$(find sam_back_end)/launch/include/module_rviz.launch" />
+
+</launch>

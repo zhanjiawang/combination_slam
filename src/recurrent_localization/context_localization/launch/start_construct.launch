@@ -1,0 +1,6 @@
+<launch>
+    <arg name="program_path" default="$(find context_localization)" />
+    <rosparam file="$(find context_localization)/config/params_construct.yaml" command="load" />
+    <node pkg="context_localization" type="context_localization" name="context_localization" args="-program_path $(arg program_path)" output="screen"/>
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find context_localization)/rviz/show.rviz"/>
+</launch>

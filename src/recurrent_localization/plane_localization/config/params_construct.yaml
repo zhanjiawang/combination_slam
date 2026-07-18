@@ -1,0 +1,43 @@
+plane_localization:
+  #构建地图模式“construct”还是读取地图模式“read”
+  work_mode: "construct"
+  #数据的位置，需要修改
+  relative_path: "jia_de_wei"
+  #定位的模式
+  localization_mode: "pose_point_cloud" #pure_point_cloud纯点云模式，pose_point_cloud位姿点云(里程计)模式
+  #缓存的大小
+  cache_size: 10
+  #定位的帧率
+  localization_fps: 10
+  #激光雷达的最远探测距离
+  lidar_max_range: 50.0 
+  #地图的平面选取规则，一条规则有四个参数，分别是最多允许的平面数量，平面的最小面积，平面法向量与向上方向的夹角的最小最大值
+  map_plane_select_rules: [5, 50, 0.0, 10.0, 
+                          200, 8, 85.0, 95.0]
+  #当前帧平面选取规则
+  scan_plane_select_rules: [1, 1, 0.0, 10.0, 
+                          10, 1, 85.0, 95.0]
+  #选取三对对应平面计算候选变换矩阵时的，两对对应平面的法向量夹角允许的误差
+  select_plane_angel_threshold: 4.0
+  #选取三对对应平面计算候选变换矩阵时的，第二和第三个平面的法向量夹角不允许太小或太大，减少候选变换矩阵的数量，提高计算得到的变化矩阵的精度
+  second_third_plane_angel_threshold: 45.0  
+  #变换矩阵聚类时的聚类内允许平移量  
+  translation_radius: 0.4
+  #变换矩阵聚类时的聚类内允许欧拉角变化量 
+  rotation_radius: 5.0
+  #共面得分角度距离权重                   
+  coplanar_angel_weight: 0.2
+  #共面得分位置距离权重
+  coplanar_distance_weight: 0.8
+  #共面得分衰减系数
+  coplanar_attenuation_coefficient: 0.5
+  #对初步变换矩阵排名靠前的多少个变化矩阵进行精细验证
+  verify_number: 500
+  # NDT的迭代最大次数
+  ndt_max_iteration: 10
+  # NDT优化残差异常值阈值
+  ndt_residual_outlier_threshold: 20.0
+  # NDT的约束数量阈值
+  ndt_constraint_number_threshold: 30
+  # NDT的优化收敛条件
+  ndt_convergence_condition_threshold: 0.01
